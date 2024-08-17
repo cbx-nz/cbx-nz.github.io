@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subdomain Index</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+        }
+        .navbar {
+            background-color: #007bff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .title {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+        .navbar .nav-links {
+            margin-right: 15px;
+        }
+        .navbar .nav-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            padding: 50px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        .subdomain-box {
+            background-color: #444;
+            border: 2px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            text-align: center;
+            color: white;
+            width: 90%;
+            margin: 0 auto;
+            position: relative;
+        }
+        .subdomain-box img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+        .subdomain-box .image-placeholder {
+            background-color: #666; /* Fallback background color */
+            color: white;
+            width: 100%;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            visibility: hidden;
+        }
+        .subdomain-box img:after {
+            content: attr(alt);
+        }
+        .subdomain-box img[onerror] {
+            visibility: hidden;
+        }
+        .subdomain-box img[onerror] + .image-placeholder {
+            visibility: visible;
+        }
+        .subdomain-box .content {
+            padding: 10px;
+        }
+        .subdomain-box .content h3 {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .subdomain-box .content p {
+            font-size: 12px;
+            color: #ddd;
+        }
+        .subdomain-box a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+<div class="navbar">
+        <div class="title">Project Index</div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../about/index.html">About Me!</a>
+            <a href="./index.html">Projects</a>
+            <a href="../networks/index.html">Networks</a>
+            <a href="../public-portal/index.html">Portal</a>
+            <a href="../contacts/index.html">Contact</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Minecraft</h2>
+        <div class="grid">
+            <div class="subdomain-box">
+                <a href="../projects/minecraft/mods.html">
+                    <img src="https://via.placeholder.com/300" alt="&#65532;" onerror="this.style.display='none';">
+                    <div class="content">
+                        <h3>Minecraft Mods</h3>
+                        <p>a Collection of all My Minecraft Java Mods!</p>
+                    </div>
+                </a>
+            </div>
+            <div class="subdomain-box">
+                <a href="./minecraft/resourcepacks.html">
+                    <img src="https://via.placeholder.com/300" alt="&#65532;" onerror="this.style.display='none';">
+                    <div class="content">
+                        <h3>Minecraft Texture Packs</h3>
+                        <p>a Collection of all my Minecraft Java Texture Packs!</p>
+                    </div>
+                </a>
+            </div>
+            <div class="subdomain-box">
+                <a href="./minecraft/datapacks.html">
+                    <img src="https://via.placeholder.com/300" alt="&#65532;" onerror="this.style.display='none';">
+                    <div class="content">
+                        <h3>Minecraft Datapacks</h3>
+                        <p>a Collection of all the Minecraft Datapacks I made!</p>
+                    </div>
+                </a>
+            </div>
+            <div class="subdomain-box">
+                <a href="./minecraft/dashslashsmp.html">
+                    <img src="https://via.placeholder.com/300" alt="&#65532;" onerror="this.style.display='none';">
+                    <div class="content">
+                        <h3>dashslash SMP</h3>
+                        <p>About The Survival Multiplayer Server created by Me!</p>
+                    </div>
+                </a>
+            </div>
+            <!-- Add more boxes as needed -->
+        </div>
+    </div>
+	<div class="container">
+        <h2>Minecraft Series</h2>
+        <div class="grid">
+            <div class="subdomain-box">
+                <a href="page1.html">
+                    <img src="https://via.placeholder.com/300" alt="&#65532;" onerror="this.style.display='none';">
+                    <div class="content">
+                        <h3>Drippy SMP</h3>
+                        <p>mc.drippysmp.net</p>
+                    </div>
+                </a>
+            </div>
+            <div class="subdomain-box">
+                <a href="page2.html">
+                    <img src="https://via.placeholder.com/300" alt="&#65532;" onerror="this.style.display='none';">
+                    <div class="content">
+                        <h3>&#65532;</h3>
+                        <p>&#65532;</p>
+                    </div>
+                </a>
+            </div>
+            <div class="subdomain-box">
+                <a href="page3.html">
+                    <img src="https://via.placeholder.com/300" alt="&#65532;" onerror="this.style.display='none';">
+                    <div class="content">
+                        <h3>&#65532;</h3>
+                        <p>&#65532;</p>
+                    </div>
+                </a>
+            </div>
+            <div class="subdomain-box">
+                <a href="page4.html">
+                    <img src="https://via.placeholder.com/300" alt="&#65532;" onerror="this.style.display='none';">
+                    <div class="content">
+                        <h3>&#65532;</h3>
+                        <p>&#65532;</p>
+                    </div>
+                </a>
+            </div>
+            <!-- Add more boxes as needed -->
+        </div>
+        <div class="container">
+            <h2>Developing/Programming Journey</h2>
+            <div class="grid">
+                <div class="subdomain-box">
+                    <a href="https://github.com/EatMYSHOORTS/">
+                        <img src="https://via.placeholder.com/300" alt="&#65532;" onerror="this.style.display='none';">
+                        <div class="content">
+                            <h3>Github Profile</h3>
+                            <p>My Github Repositories showing what I've Made</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="subdomain-box">
+                    <a href="">
+                        <img src="https://via.placeholder.com/300" alt="&#65532;" onerror="this.style.display='none';">
+                        <div class="content">
+                            <h3>PC Games</h3>
+                            <p>Programmed Games made by Me!</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="subdomain-box">
+                    <a href="page3.html">
+                        <img src="https://via.placeholder.com/300" alt="&#65532;" onerror="this.style.display='none';">
+                        <div class="content">
+                            <h3>&#65532;</h3>
+                            <p>&#65532;</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="subdomain-box">
+                    <a href="page4.html">
+                        <img src="https://via.placeholder.com/300" alt="&#65532;" onerror="this.style.display='none';">
+                        <div class="content">
+                            <h3>&#65532;</h3>
+                            <p>&#65532;</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Add more boxes as needed -->
+            </div>
+</body>
+</html>
