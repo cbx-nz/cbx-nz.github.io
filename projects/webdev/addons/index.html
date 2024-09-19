@@ -75,6 +75,37 @@
   visibility: visible;
   opacity: 1;  /* Make the tooltip visible on hover */
 }
+.container {
+            padding: 50px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Each box takes the full row */
+            gap: 30px;
+        }
+        .subdomain-box {
+            background-color: #444;
+            border: 2px solid #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            text-align: left; /* Align text to the left */
+            color: white;
+            width: 100%; /* Full width for the row */
+            margin: 0 auto;
+            padding: 20px; /* Add padding inside the box */
+        }
+        .subdomain-box .content h3 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+        .subdomain-box .content p {
+            font-size: 14px;
+            color: #ddd;
+        }
+        .subdomain-box a {
+            text-decoration: none;
+            color: inherit;
+        }
          </style>
          </head>
     <body>
@@ -88,9 +119,67 @@
               <a href="./public-portal/index.html">Portal</a>
               <a href="./contacts/index.html">Contact</a>
           </div>
+          <div class="container">
+            <div class="grid">
+                <div class="subdomain-box">
+                    <a href="">
+                        <div class="content">
+                            <h3>Tooltip Addon</h3>
+                            <p>Descrption: Keep Container at bottom, <!-- --> are used html code comments, these are being used during code stage</p>
+                            <p><!-- CSS:
+                              .container {
+                              padding: 50px;
+                          }
+                          .grid {
+                              display: grid;
+                              grid-template-columns: 1fr; /* Each box takes the full row */
+                              gap: 30px;
+                          }
+                          .subdomain-box {
+                              background-color: #444;
+                              border: 2px solid #333;
+                              border-radius: 10px;
+                              box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+                              text-align: left; /* Align text to the left */
+                              color: white;
+                              width: 100%; /* Full width for the row */
+                              margin: 0 auto;
+                              padding: 20px; /* Add padding inside the box */
+                          }
+                          .subdomain-box .content h3 {
+                              margin: 0 0 10px 0;
+                              font-size: 24px;
+                          }
+                          .subdomain-box .content p {
+                              font-size: 14px;
+                              color: #ddd;
+                          }
+                          .subdomain-box a {
+                              text-decoration: none;
+                              color: inherit;
+                          }
+                        --></p>
+                          <p><!-- HTML:
+                            <div class="container">
+                              <div class="grid">
+                                  <div class="subdomain-box">
+                                      <a href="https://www.curseforge.com/download/app">
+                                          <div class="content">
+                                              <h3>Minecraft Version</h3>
+                                              <p>1.12.2</p>
+                                          </div>
+                                      </a>
+                                  </div>
+                                -->
+                          </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+          </div>
           <div class="tooltip-container">
             <i class="info-icon">version</i>
-            <span class="info-tooltip">0.168:(release/projects-webdev-addonpage)</span>
+            <span class="info-tooltip">0.169:(release/addonpage-addon1)</span>
           </div>          
     </body>   
 </html>
