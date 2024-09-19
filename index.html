@@ -36,11 +36,11 @@
             text-decoration: none;
             font-weight: bold;
         }
-        .tooltip-bar {
+        .tooltip-container {
   position: fixed;
-  bottom: 20px;   /* Position the icon near the bottom */
-  left: 20px;     /* Align icon to the bottom left */
-  z-index: 9999;  /* Ensure it stays on top of other elements */
+  bottom: 20px;    /* Position near the bottom */
+  left: 20px;      /* Align icon to the left */
+  z-index: 9999;   /* Ensure it stays on top */
 }
 
 .info-icon {
@@ -55,27 +55,27 @@
   cursor: pointer;
 }
 
-.info-bar {
+.info-tooltip {
   visibility: hidden;  /* Hidden by default */
   position: absolute;
   background-color: #333;  /* Dark gray background */
   color: white;  /* White text */
-  padding: 10px 20px;  /* Padding for the bar */
-  font-size: 14px;     /* Font size */
-  border-radius: 20px; /* Rounded corners */
-  bottom: 100%;        /* Position the bar above the icon */
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap; /* Prevents wrapping */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);  /* Shadow for contrast */
+  padding: 8px 12px;  /* Padding for the tooltip */
+  font-size: 14px;    /* Text size */
+  border-radius: 12px; /* Rounded corners */
+  left: 100%;         /* Position the tooltip to the right of the icon */
+  margin-left: 10px;  /* Space between the icon and the tooltip */
+  white-space: nowrap; /* Prevent text wrapping */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  /* Soft shadow for contrast */
   opacity: 0;
   transition: opacity 0.3s;
 }
 
-.tooltip-bar:hover .info-bar {
+.tooltip-container:hover .info-tooltip {
   visibility: visible;
-  opacity: 1;  /* Make the info bar visible on hover */
+  opacity: 1;  /* Make the tooltip visible on hover */
 }
+
 
          </style>
          </head>
@@ -90,10 +90,9 @@
               <a href="./public-portal/index.html">Portal</a>
               <a href="./contacts/index.html">Contact</a>
           </div>
-          <div class="tooltip-bar">
+          <div class="tooltip-container">
             <i class="info-icon">i</i>
-            <span class="info-bar">Website Version: ver0:132</span>
-          </div>
-          
+            <span class="info-tooltip">Version: ver0:159</span>
+          </div>          
     </body>   
 </html>
