@@ -36,6 +36,51 @@
             text-decoration: none;
             font-weight: bold;
         }
+        .tooltip {
+  position: fixed; /* Fixes the icon in place */
+  bottom: 20px;    /* Distance from the bottom of the viewport */
+  left: 20px;      /* Distance from the left side of the viewport */
+  z-index: 9999;   /* Ensures it stays on the top layer */
+  cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+
+  /* Tooltip positioning */
+  position: absolute;
+  z-index: 9999;
+  bottom: 125%; /* Position above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  /* Tooltip transition */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.info-icon {
+  font-size: 16px;
+  background-color: #ccc;
+  border-radius: 50%;
+  padding: 5px;
+  font-family: Arial, sans-serif;
+  color: black;
+  text-align: center;
+  z-index: 9999;
+}
+
          </style>
          </head>
     <body>
@@ -51,5 +96,10 @@
           </div>
     </div>
     <h1 style="color:white;">  personal website</h1>
+    <div class="tooltip">
+        <i class="info-icon">i</i>
+        <span class="tooltiptext">This Website is on version 0:124</span>
+      </div>
+      
     </body>   
 </html>
