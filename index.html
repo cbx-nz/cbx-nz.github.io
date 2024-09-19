@@ -36,38 +36,47 @@
             text-decoration: none;
             font-weight: bold;
         }
-        .info-bar {
+        .tooltip-bar {
   position: fixed;
-  bottom: 0; /* Fixed to the bottom of the screen */
-  left: 0;
-  width: 100%; /* Full width */
-  background-color: #333; /* Dark gray background */
-  color: white; /* White text color */
-  padding: 10px 20px; /* Padding around the text */
-  font-size: 14px; /* Font size */
-  display: flex; /* Flexbox to align icon and text */
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center items horizontally */
-  border-radius: 20px; /* Rounded corners */
-  box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-  z-index: 9999; /* Ensure it stays on top */
+  bottom: 20px;   /* Position the icon near the bottom */
+  left: 20px;     /* Align icon to the bottom left */
+  z-index: 9999;  /* Ensure it stays on top of other elements */
 }
 
 .info-icon {
-  font-size: 20px; /* Larger size for the info icon */
-  background-color: #e0e0e0; /* Light gray background */
-  border-radius: 50%; /* Make it a circle */
-  padding: 10px; /* Padding to make it round */
+  font-size: 16px;
+  background-color: #e0e0e0;  /* Light gray background */
+  border-radius: 50%;         /* Circle shape */
+  padding: 10px;
   font-family: Arial, sans-serif;
-  color: black; /* Black "i" color */
-  margin-right: 10px; /* Space between the icon and the text */
+  color: black;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
 }
 
-.info-text {
-  font-size: 14px; /* Text size matching your image */
-  color: white; /* Text color */
-  display: inline; /* Inline text next to the icon */
+.info-bar {
+  visibility: hidden;  /* Hidden by default */
+  position: absolute;
+  background-color: #333;  /* Dark gray background */
+  color: white;  /* White text */
+  padding: 10px 20px;  /* Padding for the bar */
+  font-size: 14px;     /* Font size */
+  border-radius: 20px; /* Rounded corners */
+  bottom: 100%;        /* Position the bar above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap; /* Prevents wrapping */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);  /* Shadow for contrast */
+  opacity: 0;
+  transition: opacity 0.3s;
 }
+
+.tooltip-bar:hover .info-bar {
+  visibility: visible;
+  opacity: 1;  /* Make the info bar visible on hover */
+}
+
          </style>
          </head>
     <body>
@@ -81,9 +90,9 @@
               <a href="./public-portal/index.html">Portal</a>
               <a href="./contacts/index.html">Contact</a>
           </div>
-          <div class="info-bar">
+          <div class="tooltip-bar">
             <i class="info-icon">i</i>
-            <span class="info-text">Website Version: ver0:127</span>
+            <span class="info-bar">Website Version: ver0:128</span>
           </div>
           
     </body>   
