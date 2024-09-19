@@ -36,6 +36,37 @@
             text-decoration: none;
             font-weight: bold;
         }
+.container {
+            padding: 50px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Each box takes the full row */
+            gap: 30px;
+        }
+        .subdomain-box {
+            background-color: #444;
+            border: 2px solid #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            text-align: left; /* Align text to the left */
+            color: white;
+            width: 100%; /* Full width for the row */
+            margin: 0 auto;
+            padding: 20px; /* Add padding inside the box */
+        }
+        .subdomain-box .content h3 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+        .subdomain-box .content p {
+            font-size: 14px;
+            color: #ddd;
+        }
+        .subdomain-box a {
+            text-decoration: none;
+            color: inherit;
+        }
         .tooltip-container {
   position: fixed;
   bottom: 20px;    /* Position near the bottom */
@@ -75,37 +106,6 @@
   visibility: visible;
   opacity: 1;  /* Make the tooltip visible on hover */
 }
-.container {
-            padding: 50px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr; /* Each box takes the full row */
-            gap: 30px;
-        }
-        .subdomain-box {
-            background-color: #444;
-            border: 2px solid #333;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            text-align: left; /* Align text to the left */
-            color: white;
-            width: 100%; /* Full width for the row */
-            margin: 0 auto;
-            padding: 20px; /* Add padding inside the box */
-        }
-        .subdomain-box .content h3 {
-            margin: 0 0 10px 0;
-            font-size: 24px;
-        }
-        .subdomain-box .content p {
-            font-size: 14px;
-            color: #ddd;
-        }
-        .subdomain-box a {
-            text-decoration: none;
-            color: inherit;
-        }
          </style>
          </head>
     <body>
@@ -118,6 +118,7 @@
               <a href="./networks/index.html">Networks</a>
               <a href="./public-portal/index.html">Portal</a>
               <a href="./contacts/index.html">Contact</a>
+          </div>
           </div>
           <div class="container">
             <div class="grid">
@@ -179,7 +180,7 @@
           </div>
           <div class="tooltip-container">
             <i class="info-icon">version</i>
-            <span class="info-tooltip">0.169:(release/addonpage-addon1)</span>
+            <span class="info-tooltip">0.170:(release/addonpage-navbar)</span>
           </div>          
     </body>   
 </html>
