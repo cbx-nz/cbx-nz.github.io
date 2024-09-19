@@ -36,54 +36,38 @@
             text-decoration: none;
             font-weight: bold;
         }
-        .tooltip {
-  position: fixed;  /* Fixes the icon in place */
-  bottom: 20px;     /* Distance from the bottom of the viewport */
-  left: 20px;       /* Distance from the left side of the viewport */
-  z-index: 9999;    /* Ensures it stays on the top layer */
-  cursor: pointer;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: auto;              /* Auto width to match content */
-  background-color: black;   /* Black background for the tooltip */
-  color: white;              /* White text */
-  font-size: 14px;           /* Match the text size */
-  padding: 8px 12px;         /* Add padding for a nicer look */
-  border-radius: 8px;        /* Rounded corners */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);  /* Shadow for better contrast */
-
-  /* Positioning the tooltip */
-  position: absolute;
-  z-index: 9999;
-  bottom: 125%; /* Position the tooltip above the icon */
-  left: 50%;
-  transform: translateX(-50%);
-  
-  /* Tooltip transition */
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
+        .info-bar {
+  position: fixed;
+  bottom: 0; /* Fixed to the bottom of the screen */
+  left: 0;
+  width: 100%; /* Full width */
+  background-color: #333; /* Dark gray background */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Padding around the text */
+  font-size: 14px; /* Font size */
+  display: flex; /* Flexbox to align icon and text */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  z-index: 9999; /* Ensure it stays on top */
 }
 
 .info-icon {
-  font-size: 14px;               /* Slightly smaller font for the "i" */
-  background-color: #e0e0e0;     /* Light gray background */
-  border-radius: 50%;            /* Circle shape */
-  padding: 10px;                 /* Padding to make it circular */
-  font-family: Arial, sans-serif; /* Arial font family */
-  color: black;                  /* Black "i" text color */
-  display: inline-block;          /* Keep it inline */
-  text-align: center;             /* Center the text */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  /* Shadow for better visibility */
+  font-size: 20px; /* Larger size for the info icon */
+  background-color: #e0e0e0; /* Light gray background */
+  border-radius: 50%; /* Make it a circle */
+  padding: 10px; /* Padding to make it round */
+  font-family: Arial, sans-serif;
+  color: black; /* Black "i" color */
+  margin-right: 10px; /* Space between the icon and the text */
 }
 
-
+.info-text {
+  font-size: 14px; /* Text size matching your image */
+  color: white; /* Text color */
+  display: inline; /* Inline text next to the icon */
+}
          </style>
          </head>
     <body>
@@ -97,12 +81,10 @@
               <a href="./public-portal/index.html">Portal</a>
               <a href="./contacts/index.html">Contact</a>
           </div>
-    </div>
-    <h1 style="color:white;">  personal website</h1>
-    <div class="tooltip">
-        <i class="info-icon">i</i>
-        <span class="tooltiptext">This Website is on version 0:125</span>
-      </div>
-      
+          <div class="info-bar">
+            <i class="info-icon">i</i>
+            <span class="info-text">Website Version: ver0:126</span>
+          </div>
+          
     </body>   
 </html>
