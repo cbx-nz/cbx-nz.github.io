@@ -3,22 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found</title>
+    <title>chillnetvideos RNG</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #282c34;
-            color: white;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-image: url('https://www.elegantthemes.com/blog/wp-content/uploads/2020/08/000-http-error-codes.png'); /* Optional background image */
-            background-size: cover;
+            background-color: #333;
+            background-image: url(''); /* Add your background image URL */
+            background-size: cover; /* Ensure the background covers the entire page */
             background-position: center;
+            background-attachment: fixed; /* Keeps the image fixed while scrolling */
         }
         .navbar {
             background-color: #007bff;
@@ -41,39 +36,6 @@
             margin: 0 10px;
             text-decoration: none;
             font-weight: bold;
-        }
-        .container {
-            max-width: 600px;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.6); /* Optional background overlay for better text visibility */
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-
-        h1 {
-            font-size: 64px;
-            margin: 0;
-        }
-
-        p {
-            font-size: 18px;
-            margin: 10px 0 20px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #61dafb;
-            font-weight: bold;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .error-image {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
         }
         .tooltip-container {
   position: fixed;
@@ -118,26 +80,61 @@
 </head>
 <body>
     <div class="navbar">
-        <div class="title">cbgames.xyz</div>
+        <div class="title">chillnetvideos</div>
         <div class="nav-links">
-            <a href="../index.html">Home</a>
-            <a href="../about/index.html">About Me!</a>
-            <a href="./index.html">Projects</a>
-            <a href="../networks/index.html">Networks</a>
-            <a href="../public-portal/index.html">Portal</a>
-            <a href="../contacts/index.html">Contact</a>
+            <a href="/index.html">Home</a>
+            <a href="/about/index.html">About Me</a>
+            <a href="/projects/index.html">Projects</a>
+            <a href="/networks/index.html">Networks</a>
+            <a href="/public-portal/index.html">Portal</a>
+            <a href="/contacts/index.html">Contact</a>
         </div>
-    </div>
-    <div class="container">
-        <h1>404</h1> <!-- 103rd Commit -->
-        <p>Oops! The page you're looking for can't be found.</p>
-        <p>Return to <a href="/index.html">Home</a> or go to the <a href="./projects/index.html">Project Index</a>.</p>
-        <!-- <img class="error-image" src="https://via.placeholder.com/300x200?text=Not+Found" alt="404 Image"> -->
-    </div>
+        </div>
+    <h1>random video generator</h1>
+    <div id="videoContainer"></div>
+
+    <script>
+        // Replace with your YouTube API key and three channel IDs
+        const apiKey = 'AIzaSyDV9GyBgxiul8EgGYkjg-N5qJ9Paytl8do';
+        const channels = ['followmyleap', 'DaveHax', 'itsConnorCreates', 'HardwareHaven', 'SocketScienceDIY', 'DadhowdoI'];
+
+        // Customize the iframe size (width and height)
+        const iframeWidth = 1280;  // Set your desired width here
+        const iframeHeight = 720; // Set your desired height here
+
+        // Function to fetch videos from a channel
+        async function fetchVideos(channelId) {
+            const apiURL = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet&maxResults=10&type=video`;
+            const response = await fetch(apiURL);
+            const data = await response.json();
+            return data.items.map(item => item.id.videoId);
+        }
+
+        // Function to get a random video from the three channels
+        async function getRandomVideo() {
+            const allVideos = [];
+            
+            // Fetch videos from all three channels
+            for (const channel of channels) {
+                const videos = await fetchVideos(channel);
+                allVideos.push(...videos);
+            }
+
+            // Select a random video
+            const randomVideoId = allVideos[Math.floor(Math.random() * allVideos.length)];
+
+            // Display the video in an iframe with the customized size
+            const videoContainer = document.getElementById('videoContainer');
+            videoContainer.innerHTML = `<iframe width="${iframeWidth}" height="${iframeHeight}" src="https://www.youtube.com/embed/${randomVideoId}" frameborder="0" allowfullscreen></iframe>`;
+        }
+
+        // Call the function to load a random video on page load
+        getRandomVideo();
+    </script>
     <div class="tooltip-container">
         <i class="info-icon">version</i>
         <span class="info-tooltip">0.183:(testing/rngvideo)</span>
-      </div> 
+      </div>  
       <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="Ctvgamesyt" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 </body>
 </html>
