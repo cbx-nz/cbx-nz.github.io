@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title></title>
+<style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+        .sidebar-container {
+            width: 250px;
+            background-color: #2c3e50;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            padding: 20px;
+        }
+        .sidebar h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            flex: 1;
+        }
+        .main-content h2 {
+            font-size: 28px;
+            color: #34495e;
+        }
+        .main-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            margin: 10px 0;
+        }
+        .main-content .section {
+            margin-bottom: 30px;
+        }
+</style>
+<link rel="stylesheet" href="https://sidebar-api-cbgames-xyz.vercel.app/line-height.css">
+    </head>
+    <body>
+
+ <!-- Sidebar HTML -->
+ <div class="sidebar-container">
+    <h1>Sidebar API</h1>
+    <ul>
+        <li><a href="#section1" class="gap-height"></a></li>
+        <li><a href="#section2" class="gap-height"></a></li>
+        <li><a href="#section3" class="gap-height"></a></li>
+        <li><a href="#section4" class="gap-height">Section 4</a></li>
+        <li><a href="mailto://cbgames.xyz@gmail.com" class="gap-height">Contact via Email</a></li>
+        <li class="gap-height"><h4>Ctrl + Shift + O = return to Website's Homepage</h4></li>
+    </ul>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <h2 id="section1">Section 1</h2>
+    <p>Content for Section 1...</p>
+
+    <h2 id="section2">Section 2</h2>
+    ,<p>paragraph</p>
+
+    <h2 id="section3">Section 3</h2>
+    <p>Paragraph</p>
+
+    <h2 id="section4">Section 4</h2>
+    <p>Content for Section 4...</p>
+
+    <script>
+    document.addEventListener('keydown', (event) => {
+        // Detect specific key combination
+        if (event.ctrlKey && event.shiftKey && event.key === 'O') { // Ctrl + Shift + O
+            window.location.href = '/index.html'; // Change to your target URL
+        }
+    });
+    </script>
+</div>
+    </body>
+</html>
