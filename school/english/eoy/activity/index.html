@@ -56,6 +56,45 @@
         .main-content .section {
             margin-bottom: 30px;
         }
+        .tooltip-container {
+    position: fixed;
+    bottom: 20px;    /* Position near the bottom */
+    left: 20px;      /* Align icon to the left */
+    z-index: 9999;   /* Ensure it stays on top */
+  }
+  
+  .info-icon {
+    font-size: 16px;
+    background-color: darkgray;  /* Light gray background */
+    border-radius: 80%;         /* Circle shape */
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    color: black;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .info-tooltip {
+    visibility: hidden;  /* Hidden by default */
+    position: absolute;
+    background-color: #333;  /* Dark gray background */
+    color: white;  /* White text */
+    padding: 8px 12px;  /* Padding for the tooltip */
+    font-size: 14px;    /* Text size */
+    border-radius: 12px; /* Rounded corners */
+    left: 100%;         /* Position the tooltip to the right of the icon */
+    margin-left: 10px;  /* Space between the icon and the tooltip */
+    white-space: nowrap; /* Prevent text wrapping */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  /* Soft shadow for contrast */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip-container:hover .info-tooltip {
+    visibility: visible;
+    opacity: 1;  /* Make the tooltip visible on hover */
+  }
 </style>
 <link rel="stylesheet" href="updatedtooltip.css"> <!--TooltipCSSAPI-->
 <script>
