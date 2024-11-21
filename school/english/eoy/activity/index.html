@@ -62,7 +62,7 @@
     async function fetchTime() {
       try {
         // Fetch time data from WorldTimeAPI
-        const response = await fetch("https://worldtimeapi.org/api/timezone/Etc/UTC");
+        const response = await fetch("https://worldtimeapi.org/api/timezone/Pacific/Auckland");
         const data = await response.json();
         
         // Display the current UTC time
@@ -81,14 +81,14 @@
 
  <!-- Sidebar HTML -->
  <div class="sidebar-container">
-    <h1>EOY Top 10</h1>
+<h2>EOY Top 10 Activity</h2>
+    <h6 id="time">Loading...</h6>
     <ul>
         <li><a href="#section1">1</a></li>
         <li><a href="#section2">2</a></li>
         <li><a href="#section3">Section 3</a></li>
         <li><a href="#section4">Section 4</a></li>
         <li><a href="mailto://cbgames.xyz@gmail.com">Contact via Email</a></li>
-        <li><p id="time">Loading...</p></li>
     </ul>
 </div>
 
