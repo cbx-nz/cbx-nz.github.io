@@ -104,8 +104,8 @@
         const response = await fetch("https://timeapi.io/api/time/current/zone?timeZone=Pacific%2FAuckland");
         const data = await response.json();
 
-        // Display the current time
-        document.getElementById("time").innerText = `NZ: ${dateTime}`;
+        // Extract only the time
+        document.getElementById("time").innerText = `NZ: ${data.time}`;
       } catch (error) {
         console.error("Error fetching time:", error);
         document.getElementById("time").innerText = "Failed to load time.";
