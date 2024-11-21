@@ -101,7 +101,7 @@
     async function fetchTime() {
       try {
         // Fetch time data from WorldTimeAPI
-        const response = await fetch("https://worldtimeapi.org/api/timezone/Pacific/Auckland");
+        const response = await fetch("https://api.api-ninjas.com/v1/worldtime?city=Auckland");
         const data = await response.json();
         
         // Display the current UTC time
