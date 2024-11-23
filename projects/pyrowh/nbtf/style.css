@@ -1,0 +1,64 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .slideshow {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('https://res.cloudinary.com/diehyknwd/image/upload/v1732357144/noFilter-ezgif.com-webp-to-jpg-converter_kdepcp.jpg') center/cover no-repeat;
+    animation: slideshow 10s infinite;
+  }
+  
+  @keyframes slideshow {
+    0% { background: url('https://res.cloudinary.com/diehyknwd/image/upload/v1732357037/noFilter_1_wevej8.webp') center/cover no-repeat; }
+    50% { background: url('https://res.cloudinary.com/diehyknwd/image/upload/v1732356874/noFilter-ezgif.com-webp-to-jpg-converter_2_brmhuf.jpg') center/cover no-repeat; }
+    100% { background: url('https://res.cloudinary.com/diehyknwd/image/upload/v1732356874/noFilter-ezgif.com-webp-to-jpg-converter_1_buwa4p.jpg') center/cover no-repeat; }
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo img {
+    margin: 20px;
+    max-width: 100px;
+    height: auto;
+  }
+  
+  .top-bar {
+    margin-top: auto;
+    margin-bottom: 10%;
+    font-family: 'Abadi', sans-serif;
+    font-size: 18px;
+    color: white;
+  }
+  
+  .top-bar a {
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+  }
+  
+  .coming-soon {
+    margin-bottom: 30px;
+    font-family: 'Amasis MT Pro Black', sans-serif;
+    font-size: 48px;
+    color: white;
+    text-align: center;
+  }
+  
