@@ -19,8 +19,6 @@
       background-size: cover;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      color: #333;
     }
 
     /* Top Bar */
@@ -28,8 +26,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background-color: #005f73;
+      background-color: #005f73; /* Deep Teal Color */
       padding: 10px 20px;
+      width: 100%; /* Full width of the viewport */
+      position: fixed; /* Keep the top bar fixed at the top */
+      top: 0;
+      z-index: 1000;
     }
 
     .top-bar img {
@@ -50,8 +52,11 @@
 
     /* Coming Soon Section */
     .coming-soon {
+      margin-top: auto; /* Pushes the "Coming Soon" text to the bottom */
       text-align: right;
-      margin: 0 20px 40px;
+      padding: 20px;
+      position: relative;
+      z-index: 1; /* Ensures it's above the background */
     }
 
     .coming-soon h1 {
