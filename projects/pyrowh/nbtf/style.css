@@ -1,62 +1,75 @@
-/* style.css */
-body, html {
+/* Reset styles for consistency */
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow: hidden;
-    font-family: 'Open Sans', sans-serif; /* Replace with alternative font */
+    box-sizing: border-box;
   }
   
+  /* Full height and width for body and HTML */
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif; /* Fallback font */
+    overflow: hidden;
+  }
+  
+  /* Slideshow styling */
   .slideshow {
-    position: relative;
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    animation: slideshow 10s infinite;
+    position: relative;
+    background: url('https://res.cloudinary.com/diehyknwd/image/upload/v1732357037/noFilter_1_wevej8.webp') center/cover no-repeat;
+    animation: slideshow 12s infinite;
   }
   
   @keyframes slideshow {
     0% { background: url('https://res.cloudinary.com/diehyknwd/image/upload/v1732357037/noFilter_1_wevej8.webp') center/cover no-repeat; }
-    50% { background: url('https://res.cloudinary.com/diehyknwd/image/upload/v1732356874/noFilter-ezgif.com-webp-to-jpg-converter_2_brmhuf.jpg') center/cover no-repeat; }
-    100% { background: url('https://res.cloudinary.com/diehyknwd/image/upload/v1732356874/noFilter-ezgif.com-webp-to-jpg-converter_1_buwa4p.jpg') center/cover no-repeat; }
+    33% { background: url('https://res.cloudinary.com/diehyknwd/image/upload/v1732356874/noFilter-ezgif.com-webp-to-jpg-converter_2_brmhuf.jpg') center/cover no-repeat; }
+    66% { background: url('https://res.cloudinary.com/diehyknwd/image/upload/v1732356874/noFilter-ezgif.com-webp-to-jpg-converter_1_buwa4p.jpg') center/cover no-repeat; }
+    100% { background: url('https://res.cloudinary.com/diehyknwd/image/upload/v1732357037/noFilter_1_wevej8.webp') center/cover no-repeat; }
   }
   
+  /* Overlay styles */
   .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6); /* Darken background */
     display: flex;
     flex-direction: column;
+    justify-content: space-between; /* Space out elements */
     align-items: center;
-    justify-content: flex-start; /* Adjust positioning */
+    text-align: center;
   }
   
+  /* Logo styling */
   .logo img {
     margin-top: 20px;
-    max-width: 80px;
+    max-width: 100px; /* Fixed logo size */
     height: auto;
   }
   
+  /* Navigation bar styles */
   .top-bar {
     margin-top: 20px;
-    font-size: 16px;
+    font-family: Arial, sans-serif; /* Fallback */
+    font-size: 18px;
     color: white;
   }
   
   .top-bar a {
     text-decoration: none;
     color: white;
-    margin: 0 8px;
+    margin: 0 10px;
   }
   
+  /* "COMING SOON" styling */
   .coming-soon {
-    margin-top: auto;
     margin-bottom: 50px;
-    font-family: 'Amasis MT Pro Black', sans-serif; /* Replace with fallback if unavailable */
+    font-family: Arial, sans-serif; /* Replace with Amasis MT Pro Black if available */
     font-size: 48px;
+    font-weight: bold;
     color: white;
-    text-align: center;
   }
   
