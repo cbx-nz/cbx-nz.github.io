@@ -105,7 +105,7 @@
         const data = await response.json();
 
         // Extract only the time
-        document.getElementById("time").innerText = `New Zealand Time: ${data.time}`;
+        document.getElementById("time").innerText = `NZ Time of Reload: ${data.time}`;
       } catch (error) {
         console.error("Error fetching time:", error);
         document.getElementById("time").innerText = "Failed to load time.";
@@ -131,7 +131,7 @@
 
 <!-- Main Content -->
 <div class="main-content">
-    <h1>Top 10...</h1>
+    <h1>Top 10... according to my prefrence</h1>
     <h2 id="section1">No. #10</h2>
     <p>Content for Section 1...</p>
 
@@ -145,22 +145,22 @@
     <p>Content for Section 4...</p>
 
     <h2 id="section4">No. #6</h2>
-    <p>Content for Section 4...</p>
+    <p>Content for Section 5...</p>
 
     <h2 id="section4">No. #5</h2>
-    <p>Content for Section 4...</p>
+    <p>Content for Section 6...</p>
 
     <h2 id="section4">No. #4</h2>
-    <p>Content for Section 4...</p>
+    <p>Content for Section 7...</p>
 
     <h1 id="section4">Number #3</h1>
-    <p>Content for Section 4...</p>
+    <p>Content for Section 8...</p>
 
     <h1 id="section4">Number Two</h1>
-    <p>Content for Section 4...</p>
+    <p>Content for Section 9...</p>
 
     <h1 id="section4">NUMBER ONE</h1>
-    <p>Content for Section 4...</p>
+    <p>Content for Section 10...</p>
 
     <script>
     document.addEventListener('keydown', (event) => {
