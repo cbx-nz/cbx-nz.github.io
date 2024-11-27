@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cbgames-xyz.vercel.app homepage</title>
+    <script>
+        // Define the start and end dates for the special version
+        const startDate = new Date("2024-12-05T08:59:59");
+        const endDate = new Date("2024-12-05T11:00:00");
+
+        // Get the current date
+        const now = new Date();
+
+        // Load content dynamically based on the date range
+        window.onload = function() {
+            if (now >= startDate && now <= endDate) {
+                // Load the special version (Year 9 English EOY Activity)
+                document.head.innerHTML = `
+                     <title></title>
+<style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+        .sidebar-container {
+            width: 250px;
+            background-color: #2c3e50;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            padding: 20px;
+        }
+        .sidebar h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            flex: 1;
+        }
+        .main-content h2 {
+            font-size: 28px;
+            color: #34495e;
+        }
+        .main-content h1 {
+            color: #34495e;
+        }
+        .main-content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            margin: 10px 0;
+        }
+        .main-content .section {
+            margin-bottom: 30px;
+        }
+</style>
+<link rel="stylesheet" href="updatedtooltip.css"> <!--TooltipCSSAPI-->
+  <link rel="stylesheet" href="updatedtooltip.css"> <!--TooltipCSSAPI-->
+                `;
+
+                document.body.innerHTML = `
+                    <!-- Sidebar HTML -->
+ <div class="sidebar-container">
+<h2>EOY Top 10 Activity</h2>
+    <h6 id="time">Loading...</h6>
+    <ul>
+        <li><a href="/index.html" style="color:white;">Homepage</a></li>
+        <li><a href="#section2" style="color:white;">Video</a></li>
+        <li><a href="https://timeapi.io/" style="color:white;">Time API</a></li>
+        <li><a href="mailto://cbgames.xyz@gmail.com" style="color:white;">Contact via Email</a></li>
+    </ul>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <h1>Top 10 video games according to my prefrence</h1>
+    <h1> </h1>
+    <h2 id="section1">No. #10</h2>
+    <p>What?</p>
+    <p>Why?</p>
+    <p> </p>
+
+    <h2 id="section2">No. #9</h2>
+    <p>2</p>
+    <p>2</p>
+    <p> </p>
+
+    <h2 id="section3">No. #8</h2>
+    <p>Call of Duty: Warzone</p>
+    <p>watching people play it</p>
+    <p> </p>
+
+    <h2 id="section4">No. #7</h2>
+    <p>Garry's Mod</p>
+    <p>creativity and just everything</p>
+    <p> </p>
+
+    <h2 id="section4">No. #6</h2>
+    <p>Raft</p>
+    <p>Gameplay and Lore</p>
+    <p> </p>
+
+    <h2 id="section4">No. #5</h2>
+    <p>Teardown</p>
+    <p>Physics and Gameplay</p>
+    <p> </p>
+
+    <h2 id="section4">No. #4</h2>
+    <p>Fortnite</p>
+    <p>Good for Old Chapters of the Game/Remixes and Creative</p>
+    <p> </p>
+
+    <h1 id="section4">Number #3</h1>
+    <p>Minecraft Legacy Edition</p>
+    <p>Good.</p>
+    <p> </p>
+
+    <h1 id="section4">Number Two</h1>
+    <p>Minecraft Java Edition</p>
+    <p>Being able to Mod the Game to the way you can and overall nice game to play</p>
+    <p> </p>
+
+    <h1 id="section4">NUMBER ONE</h1>
+    <p>ROBLOX</p>
+    <p>Tens of Millions of Games to choose from, the Largest Gaming Community, fun to play games</p>
+    <p> </p>
+</div>
+                `;
+            } else {
+                // Load normal version
+                document.head.innerHTML = `
+                    <!--below this code comment is probably the title tag-->
+         <title>cbgames.xyz</title>
+         <style>
+ body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            background-image: url(''); /* Add your background image URL */
+            background-size: cover; /* Ensure the background covers the entire page */
+            background-position: center;
+            background-attachment: fixed; /* Keeps the image fixed while scrolling */
+        }
+        .navbar {
+            background-color: #007bff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .title {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+        .navbar .nav-links {
+            margin-right: 15px;
+        }
+        .navbar .nav-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+         </style>
+                `;
+
+                document.body.innerHTML = `
+                    <div class="navbar">
+          <div class="title">cbgames.xyz</div>
+          <div class="nav-links">
+              <a href="/index.html">Home</a>
+              <a href="/about/index.html">About Me</a>
+              <a href="/projects/index.html">Projects</a>
+              <a href="/networks/index.html">Networks</a>
+              <a href="/public-portal/index.html">Portal</a>
+              <a href="/contacts/index.html">Contact</a>
+          </div>
+          </div>
+                `;
+            }
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
