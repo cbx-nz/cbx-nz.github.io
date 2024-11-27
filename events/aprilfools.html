@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cbgames-xyz.vercel.app homepage</title>
+    <script>
+        // Set the target date
+        const updateDate = new Date("2025-04-01T00:00:00");
+
+        // Get the current date
+        const now = new Date();
+
+        // Load content dynamically based on the date
+        window.onload = function() {
+            if (now >= updateDate) {
+                // Load updated version
+                document.head.innerHTML = `
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Updated Version</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            background-color: #ffefd5;
+                            color: #333;
+                            text-align: center;
+                            margin: 0;
+                            padding: 20px;
+                        }
+                        h1 {
+                            color: #e67e22;
+                        }
+                        p {
+                            font-size: 1.2rem;
+                        }
+                    </style>
+                `;
+
+                document.body.innerHTML = `
+                    <h1>🎉 Welcome to the Updated Version 🎉</h1>
+                    <p>You've unlocked the special version of the page!</p>
+                `;
+            } else {
+                // Load normal version
+                document.head.innerHTML = `
+                    <!--below this code comment is probably the title tag-->
+         <title>cbgames.xyz</title>
+         <style>
+ body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            background-image: url(''); /* Add your background image URL */
+            background-size: cover; /* Ensure the background covers the entire page */
+            background-position: center;
+            background-attachment: fixed; /* Keeps the image fixed while scrolling */
+        }
+        .navbar {
+            background-color: #007bff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .title {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-left: 15px;
+        }
+        .navbar .nav-links {
+            margin-right: 15px;
+        }
+        .navbar .nav-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+         </style>
+         <link rel="stylesheet" href="https://cbgames-xyz.vercel.app/updatedtooltip.css"> <!--TooltipCSSAPI-->
+                `;
+
+                document.body.innerHTML = `
+                    <div class="navbar">
+          <div class="title">cbgames.xyz</div>
+          <div class="nav-links">
+              <a href="./index.html">Home</a>
+              <a href="./about/index.html">About Me</a>
+              <a href="./projects/index.html">Projects</a>
+              <a href="./networks/index.html">Networks</a>
+              <a href="./public-portal/index.html">Portal</a>
+              <a href="./contacts/index.html">Contact</a>
+          </div>
+          </div>
+          <div id="content-placeholder"></div> <!--TooltipHTMLAPI-->
+           <script src="https://cbgames-xyz.vercel.app/updatedtooltip.js"></script>     <!--TooltipJSAPI--> 
+                `;
+            }
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
