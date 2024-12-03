@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentation Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #1e3c72, #2a5298);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .button-container {
+            position: fixed;
+            bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: white;
+            border: none;
+            border-radius: 5px;
+            color: #2a5298;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #f0f0f0;
+        }
+        .content {
+            max-width: 800px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Slide 1</h1>
+        <p>Welcome to the presentation! Use the buttons below to navigate between pages.</p>
+    </div>
+    <div class="button-container">
+        <button onclick="goBack()">Go Back</button>
+        <button onclick="goPrevious()">Previous</button>
+        <button onclick="goNext()">Next</button>
+    </div>
+
+    <script>
+        // Define the navigation URLs
+        const slides = ["slide1.html", "slide2.html", "slide3.html"]; // Example slide files
+        let currentSlide = 0;
+
+        // Function to go to a predefined page
+        function goBack() {
+            window.location.href = "index.html"; // Change to your specific "back" page
+        }
+
+        // Function to go to the previous slide
+        function goPrevious() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                window.location.href = slides[currentSlide];
+            }
+        }
+
+        // Function to go to the next slide
+        function goNext() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                window.location.href = slides[currentSlide];
+            }
+        }
+
+        // Optional: Detect which slide is currently open
+        // Replace this with a dynamic mechanism if needed
+        const currentUrl = window.location.href;
+        slides.forEach((slide, index) => {
+            if (currentUrl.includes(slide)) {
+                currentSlide = index;
+            }
+        });
+    </script>
+</body>
+</html>
