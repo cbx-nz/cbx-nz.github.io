@@ -3,26 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Longfin Eel (Tuna Kuwharuwharu)</title>
+  <title>Longfin Eel Poster</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-image: url('https://res.cloudinary.com/diehyknwd/image/upload/v1733355952/website_layout_ojnctt.png'); /* Replace with your image URL */
-      background-attachment: fixed;
-      background-size: 1494px 4941; /* Set width to match viewport and adjust height automatically */
+      background-size: 1494px 4941; /* Match width and scale height */
       background-repeat: no-repeat;
-      background-position: center top; /* Adjust as needed to align the image */
-      color: white;
-      text-shadow: 1px 1px 5px black;
-      line-height: 1.6;
+      background-position: top center; /* Align background at the top */
+      height: 100vh; /* Set body height to viewport initially */
     }
+
+    html {
+      height: 100%; /* Ensure the HTML element takes up full height for scrolling */
+    }
+
     .spacer {
-      height: 2000px; /* Add space to enable scrolling */
+      height: 200%; /* Add content space to enable scrolling */
     }
   </style>
 </head>
 <body>
-  <div class="spacer"></div>
+  <div class="spacer"></div> <!-- Add space to allow scrolling down -->
 </body>
 </html>
