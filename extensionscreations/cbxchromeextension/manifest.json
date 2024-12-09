@@ -1,0 +1,11 @@
+{
+    "manifest_version": 3,
+    "name": ".CBX URLS",
+    "version": "1.0",
+    "description": "Redirects specific URLs to another destination.",
+    "permissions": ["webRequest", "webRequestBlocking", "<all_urls>"],
+    "background": {
+      "service_worker": "background.js"
+    }
+  }
+  
