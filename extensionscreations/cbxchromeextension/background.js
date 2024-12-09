@@ -11,6 +11,9 @@ chrome.webRequest.onBeforeRequest.addListener(
   
       // Extract the URL or search phrase from the request.
       const currentUrl = details.url;
+
+      // Log
+      console.log("Intercepted URL:", details.url);
   
       // Iterate over the redirect map to find matching phrases or URLs.
       for (const [key, value] of Object.entries(redirectMap)) {
