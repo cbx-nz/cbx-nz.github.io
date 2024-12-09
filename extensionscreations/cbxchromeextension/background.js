@@ -4,9 +4,9 @@ chrome.webRequest.onBeforeRequest.addListener(
     function(details) {
       // Define a mapping of target URLs to their redirection URLs.
       const redirectMap = {
-        "https://govt.cbx": "https://cbgames-xyz.vercel.app/government",
-        "https://index.cbx": "https://cbgames-xyz.vercel.app/index.html",
-        "https://gasandshenanigans.cbx": "https://cbgames-xyz.vercel.app/nbtf-faction/index.html"
+        "govt.cbx": "https://cbgames-xyz.vercel.app/government",
+        "index.cbx": "https://cbgames-xyz.vercel.app/index.html",
+        "gasandshenanigans.cbx": "https://cbgames-xyz.vercel.app/nbtf-faction/index.html"
       };
   
       // Check if the current request URL is in the redirect map.
