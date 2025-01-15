@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socialstain | Bloxburg Social App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #ffbe76;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #ff7979;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .profile, .feed, .notifications {
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            margin: 10px 0 5px;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        .create-post {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            background-color: #ffbe76;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .create-post:hover {
+            background-color: #ffa502;
+        }
+
+        .desktop {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .mobile {
+                display: none;
+            }
+            .desktop {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Socialstain
+    </header>
+
+    <div class="mobile">
+        <div class="feed">
+            <div class="card">
+                <h3>Welcome to Bloxburg!</h3>
+                <p>Explore the latest builds and share your creations.</p>
+                <img src="https://via.placeholder.com/300" alt="Example Post">
+                <button onclick="likePost(this)">Like</button>
+            </div>
+
+            <div class="card">
+                <h3>Modern Mansion</h3>
+                <p>Check out this stunning modern mansion by user @BuilderPro!</p>
+                <img src="https://via.placeholder.com/300" alt="Modern Mansion">
+                <button onclick="likePost(this)">Like</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="desktop">
+        <div class="feed">
+            <div class="card">
+                <h3>Welcome to Bloxburg!</h3>
+                <p>Explore the latest builds and share your creations in full-screen mode.</p>
+                <img src="https://via.placeholder.com/500" alt="Example Post">
+                <button onclick="likePost(this)">Like</button>
+            </div>
+
+            <div class="card">
+                <h3>Modern Mansion</h3>
+                <p>Check out this stunning modern mansion by user @BuilderPro!</p>
+                <img src="https://via.placeholder.com/500" alt="Modern Mansion">
+                <button onclick="likePost(this)">Like</button>
+            </div>
+        </div>
+    </div>
+
+    <button class="create-post" onclick="createNewPost()">+</button>
+
+    <nav>
+        <a href="#profile">Profile</a>
+        <a href="#feed">Feed</a>
+        <a href="#notifications">Notifications</a>
+    </nav>
+
+    <script>
+        function likePost(button) {
+            const currentText = button.textContent;
+            if (currentText === "Like") {
+                button.textContent = "Liked!";
+                button.style.backgroundColor = "#ff7979";
+                button.style.color = "#fff";
+            } else {
+                button.textContent = "Like";
+                button.style.backgroundColor = "";
+                button.style.color = "";
+            }
+        }
+
+        function createNewPost() {
+            alert("Create a new post functionality coming soon!");
+        }
+
+        function detectDevice() {
+            if (window.innerWidth < 768) {
+                alert("You are using a mobile device!");
+            } else {
+                alert("You are using a desktop device!");
+            }
+        }
+
+        window.onload = detectDevice;
+    </script>
+</body>
+</html>
