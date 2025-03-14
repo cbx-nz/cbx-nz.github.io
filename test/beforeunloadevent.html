@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before Unload Example</title>
+    <script>
+        window.addEventListener("beforeunload", function (event) {
+            event.preventDefault(); 
+            event.returnValue = ""; // Some browsers require this for the prompt to show
+        });
+    </script>
+</head>
+<body>
+    <h1>Try closing this tab or refreshing!</h1>
+</body>
+</html>
