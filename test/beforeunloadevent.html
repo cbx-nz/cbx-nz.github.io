@@ -10,8 +10,11 @@
             event.returnValue = ""; // Some browsers require this for the prompt to show
         });
     </script>
+    <link rel="stylesheet" href="updatedtooltip.css"> <!--TooltipCSSAPI-->
 </head>
 <body>
     <h1>Try closing this tab or refreshing!</h1>
+    <div id="content-placeholder"></div> <!--TooltipHTMLAPI-->
+          <script src="updatedtooltip.js"></script>     <!--TooltipJSAPI--> 
 </body>
 </html>
