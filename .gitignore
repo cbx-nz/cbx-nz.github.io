@@ -1,1 +1,3 @@
-/reviews/gpt.text
+/reviews/gpt.txt
+.gitignore
+gpt.txt
