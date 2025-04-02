@@ -1,21 +1,32 @@
 // /reviews/assets/js/reviews.js or ./assets/js/reivews.js
-const app = firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
+// reviews.js
+let vote = 0;
 
-        let vote = 0;
+if (localStorage.getItem('hasReviewed')) {
+    document.getElementById('submit-btn').disabled = true;
+    alert('You have already submitted a review.');
+}
 
-        if (localStorage.getItem('hasReviewed')) {
-            document.getElementById('submit-btn').disabled = true;
-            alert('You have already submitted a review.');
-        }
+document.getElementById('submit-btn').addEventListener('click', function() {
+    const comment = document.getElementById('comment').value;
+    const token = grecaptcha.getResponse();  // reCAPTCHA response token
 
-        document.getElementById('submit-btn').addEventListener('click', function() {
-            const comment = document.getElementById('comment').value;
-            if (vote === 0 || !comment.trim()) {
-                alert('Please provide a comment and select Like or Dislike.');
-                return;
-            }
+    if (vote === 0 || !comment.trim() || !token) {
+        alert('Please provide a comment and select Like or Dislike.');
+        return;
+    }
 
+    // Send review and reCAPTCHA token to backend
+    fetch('/api/verify-captcha', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ token, comment, vote })
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        if (data.success) {
             db.collection('reviews').add({
                 comment: comment,
                 vote: vote,
@@ -27,4 +38,8 @@ const app = firebase.initializeApp(firebaseConfig);
             }).catch((error) => {
                 console.error('Error submitting review:', error);
             });
-        });
+        } else {
+            alert(data.message || 'Failed to verify captcha.');
+        }
+    });
+});
