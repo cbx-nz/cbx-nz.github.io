@@ -3,18 +3,6 @@ const app = firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
 
         let vote = 0;
-        
-        document.getElementById('like-btn').addEventListener('click', function() {
-            vote = 1;
-            this.classList.add('selected');
-            document.getElementById('dislike-btn').classList.remove('selected');
-        });
-
-        document.getElementById('dislike-btn').addEventListener('click', function() {
-            vote = -1;
-            this.classList.add('selected');
-            document.getElementById('like-btn').classList.remove('selected');
-        });
 
         if (localStorage.getItem('hasReviewed')) {
             document.getElementById('submit-btn').disabled = true;

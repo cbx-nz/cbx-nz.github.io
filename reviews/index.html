@@ -71,7 +71,19 @@
 
         .vote-buttons button {
             margin-right: 10px;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+
+        .vote-buttons button.selected {
+            background-color: #1E90FF;
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -100,6 +112,17 @@
 
     <script src="./assets/js/firebase.js"></script>
     <script src="./assets/js/reviews.js"></script>
+
+    <script>
+        document.getElementById('like-btn').addEventListener('click', function() {
+            this.classList.add('selected');
+            document.getElementById('dislike-btn').classList.remove('selected');
+        });
+
+        document.getElementById('dislike-btn').addEventListener('click', function() {
+            this.classList.add('selected');
+            document.getElementById('like-btn').classList.remove('selected');
+        });
+    </script>
 </body>
 </html>
-
