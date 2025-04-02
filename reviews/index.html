@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/diehyknwd/image/upload/v1733356534/favicon_u1ktel.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>govt.cbx</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <style>
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-bar {
+            background: linear-gradient(45deg, #6699CC, #99CCFF, #ffffff);
+            padding: 10px 0;
+            border-bottom: 2px solid #1E90FF;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .top-bar a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .top-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #c0c0c0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            font-size: 22px;
+            color: #1E90FF;
+            border-bottom: 2px solid #1E90FF;
+            padding-bottom: 5px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            background-color: #e6e6e6;
+            border-top: 1px solid #c0c0c0;
+        }
+
+        .review-form {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #ffffff;
+            border: 1px solid #c0c0c0;
+        }
+
+        .vote-buttons button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#help">Help</a>
+    </div>
+
+    <div class="content">
+        <div class="review-form">
+            <textarea id="comment" placeholder="Write your review here..."></textarea>
+            <div class="vote-buttons">
+                <button id="like-btn">Like</button>
+                <button id="dislike-btn">Dislike</button>
+            </div>
+            <button id="submit-btn">Submit Review</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2004 GovernmentMockup. All Rights Reserved.
+    </div>
+
+    <script src="./assets/js/firebase.js"></script>
+    <script src="./assets/js/reviews.js"></script>
+</body>
+</html>
+
