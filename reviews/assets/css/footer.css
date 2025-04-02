@@ -1,0 +1,14 @@
+.content {
+    flex: 1; /* Pushes the footer down */
+}
+
+/* Footer always sticks to bottom */
+.footer {
+    text-align: center;
+    padding: 12px;
+    font-size: 13px;
+    background: linear-gradient(45deg, #e0e0e0, #f5f5f5);
+    border-top: 2px solid #999;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
