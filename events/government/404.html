@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <script>
+        function isEventDay() {
+            const today = new Date();
+            const month = today.getMonth() + 1;
+            const day = today.getDate();
+            return (month === 4 && day === 1) || (month === 8 && day === 9);
+        }
+
+        window.onload = function() {
+            if (isEventDay()) {
+                document.body.innerHTML = `
+                <div class="container">
+                    <div class="icon">
+                        <img src="https://res.cloudinary.com/diehyknwd/image/upload/v1734665913/image_2024-12-20_163832865_wb1hxd.png" alt="Icon">
+                    </div>
+                    <div class="title">Sorry for the inconvenience.</div>
+                    <div class="message">
+                        We're busy setting up since the internet's back up!<br>
+                        Please come visit us later!<br>
+                        Currently under Maintenance
+                    </div>
+                    <div class="footer">
+                        &copy; 2004 GovernmentMockup. All Rights Reserved.
+                    </div>
+                </div>`;
+                document.body.style.backgroundColor = "#e3e6e4";
+                document.body.style.color = "#000000";
+                document.body.style.fontFamily = "Tahoma, Arial, sans-serif";
+            }
+        };
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #333;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .icon img {
+            width: 120px;
+            height: auto;
+        }
+        .title {
+            font-size: 22px;
+            color: #1E90FF;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #1E90FF;
+            padding-bottom: 5px;
+        }
+        .message {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .footer {
+            font-size: 12px;
+            color: #666666;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>Page Not Found</p>
+        <p><a href="/">Return to Homepage</a></p>
+    </div>
+</body>
+</html>
