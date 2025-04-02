@@ -1,0 +1,331 @@
+GPT
+do I need to create a firestore collection for this, if so, how? also can you change the html so that it can tell you that a review has been submitted when localstorage says so or 
+after submitted like a splash screen, Code (HTML+Firebase.js+Reviews.js+Verify-Captcha.js):
+
+HTML:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/diehyknwd/image/upload/v1733356534/favicon_u1ktel.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background-color: #f5faff; /* Light grayish-blue, softer on the eyes */
+            color: #000000;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        /* ✨ Top Bar - Darker left-side blue for an older gradient effect */
+        .top-bar {
+            background: linear-gradient(90deg, #003366, #6699CC, #99CCFF);
+            padding: 10px 0;
+            border-bottom: 3px solid #0055aa;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .top-bar a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 15px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Early 2000s text glow */
+        }
+        
+        .top-bar a:hover {
+            text-decoration: underline;
+        }
+        
+        /* 📦 Content Box */
+        .content {
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #a0a0a0;
+            background-color: #f0f8ff;
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); /* 3D Effect */
+            border-radius: 5px;
+            flex: 1;
+        }
+        
+        /* 📝 Headers */
+        h1 {
+            font-size: 24px;
+            color: #0033cc;
+            border-bottom: 3px solid #0055aa;
+            padding-bottom: 5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* 📰 Paragraphs */
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        /* 📩 Review Form */
+        .review-form {
+            margin-top: 20px;
+            padding: 18px;
+            background-color: #ffffff;
+            border: 2px solid #a0a0a0;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* 👍 Vote Buttons */
+        .vote-buttons button {
+            margin-right: 10px;
+            padding: 12px 18px;
+            border: 2px solid #ccc;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            background: linear-gradient(45deg, #e6e6e6, #ffffff);
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .vote-buttons button:hover {
+            background: linear-gradient(45deg, #cccccc, #ffffff);
+            border-color: #999;
+        }
+        
+        .vote-buttons button.selected {
+            background-color: #1E90FF;
+            color: white;
+            border-color: #0055aa;
+            box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* 📌 Sticky Footer (Fixed at Bottom) */
+        .footer {
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 12px;
+            font-size: 13px;
+            background: linear-gradient(45deg, #e0e0e0, #f5f5f5);
+            border-top: 2px solid #999;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+        }             
+    </style>
+    <title>govt.cbx</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- reCAPTCHA API -->
+</head>
+<body>
+    <div class="top-bar">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#help">Help</a>
+    </div>
+
+    <div class="content">
+        <h1>Review Website</h1>
+        <div class="review-form">
+            <textarea id="comment" placeholder="Write your review here..."></textarea>
+            <div class="vote-buttons">
+                <button id="like-btn">Like</button>
+                <button id="dislike-btn">Dislike</button>
+            </div>
+            <div class="g-recaptcha" data-sitekey="6LdsHAcrAAAAAA0iQ9fLIZL_FBy3sZClwmoEvchJ"></div> <!-- Add your site key here -->
+            <button id="submit-btn">Submit Review</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2004 GovernmentMockup. All Rights Reserved.
+    </div>
+
+    <script type="module" src="./assets/js/firebase.js"></script>
+    <script src="./assets/js/reviews.js"></script>
+
+    <script>
+        document.getElementById('like-btn').addEventListener('click', function() {
+            this.classList.add('selected');
+            document.getElementById('dislike-btn').classList.remove('selected');
+        });
+
+        document.getElementById('dislike-btn').addEventListener('click', function() {
+            this.classList.add('selected');
+            document.getElementById('like-btn').classList.remove('selected');
+        });
+
+        document.getElementById('submit-btn').addEventListener('click', async function() {
+            const comment = document.getElementById('comment').value;
+            const token = grecaptcha.getResponse(); // Get reCAPTCHA token
+
+            if (vote === 0 || !comment.trim() || !token) {
+                alert('Please provide a comment, select Like/Dislike, and complete the CAPTCHA.');
+                return;
+            }
+
+            // Send token and comment to the backend API for verification
+            const response = await fetch('/api/verify-captcha', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ token, comment, vote })
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                alert('Review submitted successfully.');
+            } else {
+                alert(data.message || 'Failed to verify captcha.');
+            }
+        });
+    </script>
+</body>
+</html>
+
+firebase.js:
+
+// /reviews/assets/js/firebase.js or ./assets/js/firebase.js
+// firebase.js
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore();
+const analytics = getAnalytics(app);
+
+export { app, db, analytics };
+
+reviews.js:
+
+// /reviews/assets/js/reviews.js or ./assets/js/reivews.js
+// reviews.js
+import { db } from './firebase.js';
+import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+let vote = 0;
+
+// Check if user has already reviewed
+if (localStorage.getItem('hasReviewed')) {
+    document.getElementById('submit-btn').disabled = true;
+    alert('You have already submitted a review.');
+}
+
+// Like & Dislike Button Logic
+document.getElementById('like-btn').addEventListener('click', function() {
+    vote = 1;
+    this.classList.add('selected');
+    document.getElementById('dislike-btn').classList.remove('selected');
+});
+
+document.getElementById('dislike-btn').addEventListener('click', function() {
+    vote = -1;
+    this.classList.add('selected');
+    document.getElementById('like-btn').classList.remove('selected');
+});
+
+// Submit Review Function
+document.getElementById('submit-btn').addEventListener('click', async function() {
+    const comment = document.getElementById('comment').value;
+    const token = grecaptcha.getResponse();  // reCAPTCHA response token
+
+    if (vote === 0 || !comment.trim() || !token) {
+        alert('Please provide a comment, select Like or Dislike, and complete reCAPTCHA.');
+        return;
+    }
+
+    try {
+        // Send token to backend for verification
+        const response = await fetch('/api/verify-captcha', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ token })
+        });
+
+        const data = await response.json();
+        
+        if (!data.success) {
+            alert('Captcha verification failed. Try again.');
+            return;
+        }
+
+        // Store review in Firestore if reCAPTCHA is valid
+        await addDoc(collection(db, 'reviews'), {
+            comment: comment,
+            vote: vote,
+            timestamp: serverTimestamp()
+        });
+
+        localStorage.setItem('hasReviewed', true);
+        alert('Review submitted successfully.');
+        document.getElementById('submit-btn').disabled = true;
+    } catch (error) {
+        console.error('Error submitting review:', error);
+        alert('An error occurred. Try again.');
+    }
+});
+
+verify-captcha.js:
+
+export default async function handler(req, res) {
+    if (req.method !== 'POST') {
+        return res.status(405).json({ success: false, message: "Method Not Allowed" });
+    }
+
+    const { token } = req.body;  // reCAPTCHA response token from frontend
+    const apple = process.env.RECAPTCHA_SECRET_KEY;  // Use env variable for the secret key
+
+    if (!token) {
+        return res.status(400).json({ success: false, message: "Captcha token missing!" });
+    }
+
+    try {
+        // Verify reCAPTCHA with Google
+        const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                secret: apple,
+                response: token
+            })
+        });
+
+        const data = await response.json();
+
+        if (!data.success) {
+            return res.status(400).json({ success: false, message: "Captcha verification failed!" });
+        }
+
+        return res.status(200).json({ success: true, message: "Captcha verified successfully!" });
+
+    } catch (error) {
+        console.error("reCAPTCHA Error:", error);
+        return res.status(500).json({ success: false, message: "Error verifying captcha" });
+    }
+}
+
+check if there are any errors between all of these files too 
