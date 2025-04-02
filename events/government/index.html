@@ -111,6 +111,7 @@
                             border-top: 1px solid #c0c0c0;
                         }
                     </style>`;
+        
                 document.getElementById("body").innerHTML = `
                     <div class="top-bar">
                         <a href="#home">Home</a>
@@ -125,13 +126,16 @@
                         <p>Use the navigation bar above to explore different sections of the site.</p>
                     </div>
                     <div class="footer">&copy; 2004 GovernmentMockup. All Rights Reserved.</div>
-                    <div id="content-placeholder"></div>
-                    <script src="https://cbgames-xyz.vercel.app/updatedtooltip.js">
-                    </script> 
-                    `;
+                    <div id="content-placeholder"></div>`;
+        
+                // Dynamically add the script
+                const script = document.createElement("script");
+                script.src = "https://cbgames-xyz.vercel.app/updatedtooltip.js";
+                document.body.appendChild(script);
             }
         }
-        checkDate();
+        
+        checkDate();         
     </script>
 </body>
 </html>
