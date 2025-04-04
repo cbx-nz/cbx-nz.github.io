@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en-NZ"> 
-     <head>
-        <!--below this code comment is probably the title tag-->
-        <!--No shit its the title tag-->
-         <title>cbgames.xyz</title>
-         <style>
- body {
+<html lang="en-NZ">
+<head id="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cbgames.xyz</title>
+    <link rel="stylesheet" href="updatedtooltip.css">
+    <style>
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #333;
-            background-image: url(''); /* Add your background image URL */
-            background-size: cover; /* Ensure the background covers the entire page */
+            background-image: url('');
+            background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Keeps the image fixed while scrolling */
+            background-attachment: fixed;
         }
         .navbar {
             background-color: #007bff;
@@ -37,22 +38,110 @@
             text-decoration: none;
             font-weight: bold;
         }
-         </style>
-         <link rel="stylesheet" href="updatedtooltip.css"> <!--TooltipCSSAPI-->
-         </head>
-    <body>
-     <div class="navbar">
-          <div class="title">cbgames.xyz</div>
-          <div class="nav-links">
-              <a href="./index.html">Home</a>
+    </style>
+</head>
+<body id="body">
+    <div class="navbar">
+        <div class="title">cbgames.xyz</div>
+        <div class="nav-links">
+            <a href="./index.html">Home</a>
+            <a href="./about/index.html">About Me</a>
+            <a href="./projects/index.html">Projects</a>
+            <a href="./sitemap.html">Sitemap</a>
+            <a href="./public-portal/index.html">Portal</a>
+            <a href="./contacts/index.html">Contact</a>
+        </div>
+    </div>
+    <div id="content-placeholder"></div>
+    <script src="./updatedtooltip.js"></script>
+    <script>
+        function checkDate() {
+            const today = new Date();
+            const month = today.getMonth() + 1;
+            const day = today.getDate();
+            if ((month === 4 && day === 4) || (month === 8 && day === 9)) {
+                document.getElementById("head").innerHTML = `
+                    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/diehyknwd/image/upload/v1733356534/favicon_u1ktel.ico">
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <title>about cbx.nz</title>
+                    <link rel="stylesheet" href="/updatedtooltip.css">
+                    <style>
+                        body {
+                            font-family: Tahoma, Arial, sans-serif;
+                            background-color: #ffffff;
+                            color: #000000;
+                            margin: 0;
+                            padding: 0;
+                        }
+                        .top-bar {
+                            background: linear-gradient(45deg, #6699CC, #99CCFF, #ffffff);
+                            padding: 10px 0;
+                            border-bottom: 2px solid #1E90FF;
+                            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                        }
+                        .top-bar a {
+                            color: #ffffff;
+                            text-decoration: none;
+                            margin: 0 15px;
+                            font-size: 14px;
+                            font-weight: bold;
+                        }
+                        .top-bar p {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        }
+                        .content {
+                            margin: 20px;
+                            padding: 15px;
+                            border: 1px solid #c0c0c0;
+                            background-color: #f4f4f4;
+                        }
+                        h1 {
+                            font-size: 22px;
+                            color: #1E90FF;
+                            border-bottom: 2px solid #1E90FF;
+                            padding-bottom: 5px;
+                        }
+                        p {
+                            font-size: 14px;
+                            line-height: 1.5;
+                        }
+                        .footer {
+                            text-align: center;
+                            padding: 10px;
+                            font-size: 12px;
+                            background-color: #e6e6e6;
+                            border-top: 1px solid #c0c0c0;
+                        }
+                    </style>`;
+        
+                document.getElementById("body").innerHTML = `
+                    <div class="top-bar">
+                    <p>cbgames.xyz</p>
+                        <a href="./index.html">Home</a>
               <a href="./about/index.html">About Me</a>
               <a href="./projects/index.html">Projects</a>
               <a href="./sitemap.html">Sitemap</a>
               <a href="./public-portal/index.html">Portal</a>
               <a href="./contacts/index.html">Contact</a>
-          </div>
-          </div> 
-          <div id="content-placeholder"></div> <!--TooltipHTMLAPI-->
-          <script src="updatedtooltip.js"></script>     <!--TooltipJSAPI--> 
-    </body>   
+                    </div>
+                    <div class="content">
+                        <h1>cbgames.xyz</h1>
+                        <p>This is a website about a guy, names: cbx, cbx.nz, ctvgames, cbgames, ctvgamez,</p>
+                        <p>Use the navigation bar above to explore different sections of the site.</p>
+                    </div>
+                    <div class="footer">2024 cbx.nz | All Rights Reserved.</div>
+                    <div id="content-placeholder"></div>`;
+        
+                // Dynamically add the script
+                const script = document.createElement("script");
+                script.src = "https://cbgames-xyz.vercel.app/updatedtooltip.js";
+                document.body.appendChild(script);
+            }
+        }
+        
+        checkDate();         
+    </script>
+</body>
 </html>
