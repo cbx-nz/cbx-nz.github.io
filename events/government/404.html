@@ -9,7 +9,7 @@
             const today = new Date();
             const month = today.getMonth() + 1;
             const day = today.getDate();
-            return (month === 4 && day === 1) || (month === 8 && day === 9);
+            return (month === 4 && day === 4) || (month === 8 && day === 9);
         }
 
         window.onload = function() {
@@ -26,11 +26,11 @@
                         Currently under Maintenance
                     </div>
                     <div class="footer">
-                        &copy; 2004 GovernmentMockup. All Rights Reserved.
+                        &copy; 2024 cbx.nz | All Rights Reserved.
                     </div>
                 </div>`;
                 document.body.style.backgroundColor = "#e3e6e4";
-                document.body.style.color = "#000000";
+                document.body.style.color = "#c2c2c2";
                 document.body.style.fontFamily = "Tahoma, Arial, sans-serif";
             }
         };
@@ -52,7 +52,7 @@
             max-width: 600px;
             padding: 20px;
             border-radius: 10px;
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(194, 194, 194, 0.6);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
         h1 {
@@ -85,6 +85,7 @@
         .message {
             font-size: 14px;
             line-height: 1.5;
+            color:#000000;
         }
         .footer {
             font-size: 12px;
@@ -97,7 +98,7 @@
     <div class="container">
         <h1>404</h1>
         <p>Page Not Found</p>
-        <p><a href="/">Return to Homepage</a></p>
+        <p><a href="./index.html">Return to Homepage</a></p>
     </div>
 </body>
 </html>
