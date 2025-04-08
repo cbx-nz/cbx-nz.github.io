@@ -14,34 +14,46 @@
       padding: 0;
     }
 
-    /* Top Navigation Bar */
+    /* Top Navigation Bar - full width, split left/right */
     .top-bar {
       background: linear-gradient(45deg, #6699CC, #99CCFF, #ffffff);
-      padding: 10px 0;
+      padding: 10px 20px;
       border-bottom: 2px solid #1E90FF;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .top-bar a {
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
       color: #ffffff;
       text-decoration: none;
-      margin: 0 15px;
       font-size: 14px;
       font-weight: bold;
     }
 
-    .top-bar a:hover {
+    .nav-links a:hover {
       text-decoration: underline;
     }
 
-    /* Container to simulate classic centered layout */
-    .container {
-      width: 800px; /* Classic width */
-      margin: 0 auto; /* Centers the layout */
+    .site-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+      white-space: nowrap;
     }
 
-    /* Content Section */
+    /* Container for classic centered layout */
+    .container {
+      width: 800px;
+      margin: 0 auto;
+    }
+
     .content {
       margin: 20px 0;
       padding: 15px;
@@ -61,7 +73,6 @@
       line-height: 1.5;
     }
 
-    /* Footer */
     .footer {
       text-align: center;
       padding: 10px;
@@ -73,16 +84,20 @@
   <link rel="stylesheet" href="/updatedtooltip.css"> <!--TooltipCSSAPI-->
 </head>
 <body>
-  <!-- Top Navigation Bar -->
+
+  <!-- Top Bar with split layout -->
   <div class="top-bar">
-    <a href="#home">Home</a>
-    <a href="#about">About Us</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-    <a href="#help">Help</a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="#help">Help</a>
+    </div>
+    <div class="site-title">govt.cbx</div>
   </div>
 
-  <!-- Main Content Container (adds that old-school centered feel) -->
+  <!-- Main Content (centered) -->
   <div class="container">
     <div class="content">
       <h1>GovernmentMockupWebsite</h1>
@@ -90,7 +105,7 @@
       <p>Use the navigation bar above to explore different sections of the site.</p>
     </div>
 
-    <!-- Footer inside container -->
+    <!-- Footer inside the centered layout -->
     <div class="footer">
       &copy; 2004 GovernmentMockup. All Rights Reserved.
     </div>
