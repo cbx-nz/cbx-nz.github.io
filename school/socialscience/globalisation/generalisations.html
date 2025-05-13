@@ -52,6 +52,9 @@
         padding-left: 80px;
       }
     </style>
+    <audio class="my_audio" controls preload="none">
+    <source src="/audio/beep.mp3" type="audio/mpeg">
+</audio>
   </head>
   <body>
     <div class="icon">
@@ -77,8 +80,14 @@
         together so it would make sense that all those three are low-income.<br> 2nd lowest (medium) income
         countries are either in Africa or Asia.</p></li>
       <div class="apple">
-      <img src="" alt="Graph/Map">
+      <img src="" alt="Graph/Map" onclick="clickme()">
       </div>
     </ul>
+    <script>
+function clickme() {
+  alert("Loading Original Graph!");
+  $(".my_audio").trigger('play');
+}
+</script>
     </body>
 </html>
