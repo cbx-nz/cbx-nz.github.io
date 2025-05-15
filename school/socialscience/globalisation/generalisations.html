@@ -89,7 +89,11 @@
     <script>
 function showGraph() {
   alert("Loading Original Graph!");
-  (".my_audio").trigger('play');
+  open("https://wid.world/world/#anninc_p0p100_z/US;FR;DE;CN;ZA;GB;WO/2023/us/k/x/yearly/a/false/0/100000/curve/false/country");
+  var audio = document.querySelector('.my_audio');
+  audio.volume = 2; // Set volume to 10%
+  audio.currentTime = 0; // Reset audio to start
+  audio.play();
 }
 </script>
     </body>
