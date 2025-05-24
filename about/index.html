@@ -1,53 +1,117 @@
 <!DOCTYPE html>
-<html>
-    <head>
-<title>About Me!</title>
-<style>body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #333;
-}
-.navbar {
-    background-color: #007bff;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.navbar .title {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    margin-left: 15px;
-}
-.navbar .nav-links {
-    margin-right: 15px;
-}
-.navbar .nav-links a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: bold;
-}
-body a {
-padding-left: 40px;
-padding-top: 80px;
-}</style>
-    </head>
-    <body>
-        <div class="navbar">
-            <div class="title">just a singular developer's about page</div>
-            <div class="nav-links">
-                <a href="../index.html">cbgames.xyz</a>
-                <a href="./index.html">About Me!</a>
-                <a href="../projects/index.html">Projects</a>
-                <a href="../networks/index.html">Networks</a>
-                <a href="../public-portal/index.html">Portal</a>
-                <a href="../contacts/index.html">Contact</a>
-            </div>
-        </div>
-        <div></div>
-        <a href="https://spacehey.com/cbgames">Spacehey Profile</a>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>cbx ‑ Web Dev Availability</title>
+  <!-- Playfair for headings, Inter for body (fallback to system fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --border: 2px solid #00263b; /* dark navy */
+      --filled-bg: #2ecc71; /* flat green */
+      --burned-bg: #f3f4f6; /* very light gray */
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 2rem 1rem;
+      font-family: "Inter", system-ui, sans-serif;
+      background:#fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    h1, h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      margin: .25rem 0;
+      text-align:center;
+      line-height:1.15;
+    }
+    h1 { font-size: clamp(1.8rem, 4vw + 1rem, 3.5rem); }
+    h2 { font-size: clamp(1.25rem, 2.5vw + 1rem, 2.5rem); font-weight:700; }
+
+    /* outer rounded container */
+    .frame {
+      border: var(--border);
+      border-radius: 1.75rem;
+      padding: 2rem 2.5rem;
+      display: inline-block;
+    }
+
+    /* slots grid */
+    .slots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem 2rem;
+      max-width: 900px;
+    }
+
+    /* individual slot */
+    .slot {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 110px;
+      border: var(--border);
+      border-radius: 1rem;
+      font-weight: 500;
+      text-align: center;
+      text-decoration: none;
+      color: #000;
+      user-select: none;
+      transition: transform .15s ease, box-shadow .15s ease;
+      cursor: pointer;
+    }
+    .slot:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,.12);
+    }
+
+    /* slot states */
+    .slot.filled { background: var(--filled-bg); }
+    .slot.available { background: #fff; }
+    .slot.burned   { background: var(--burned-bg); opacity:.6; }
+    .slot.red      { background: #ff6b6b; color: #fff; }
+
+    /* mobile tweaks */
+    @media (max-width: 420px) {
+      .slot { height: 90px; font-size: .9rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>cbx Website</h1>
+  <h2>Development Slots</h2>
+
+  <main class="frame">
+    <section class="slots">
+      <!-- Row 1 -->
+      <a href="#paradise"   class="slot filled"   title="Paradise Café project in progress">Paradise<br>Café</a>
+      <a href="#power"      class="slot filled"   title="Power Shock project in progress">Power<br>Shock</a>
+      <a href="#nbtf-ds"    class="slot filled"   title="NBTF Driving School project in progress">NBTF<br>Driving<br>School</a>
+      <a href="#rebl"       class="slot filled"   title="REBL Gas Faction project in progress">REBL<br>Gas<br>Faction</a>
+      <a href="mailto:you@example.com?subject=Website%20request" class="slot available" title="Hit me up – this slot is open">Available</a>
+      <!-- Row 2 -->
+      <a href="#nbtf"       class="slot filled"   title="NBTF project in progress">NBTF</a>
+      <a href="#nbep"       class="slot filled"   title="NBEP project in progress">NBEP</a>
+      <a href="#omc"        class="slot filled"   title="Online Maths Club project in progress">Online<br>Maths<br>Club</a>
+      <a href="../school/" class="slot red" title="reserved for school work based website development">School</a>
+      <a href="#burned2"    class="slot burned"   title="Slot temporarily closed">Burned<br>Out</a>
+    </section>
+  </main>
+
+  <!-- JS: you can wire real actions/events here instead of simple links -->
+  <script>
+    document.querySelectorAll('.slot.available').forEach(btn => {
+      btn.addEventListener('click', () => {
+        alert('Great, you clicked the Available slot! Replace this alert with your onboarding flow or contact form.');
+      });
+    });
+  </script>
+</body>
 </html>
