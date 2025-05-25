@@ -34,6 +34,22 @@
     h1 { font-size: clamp(1.8rem, 4vw + 1rem, 3.5rem); }
     h2 { font-size: clamp(1.25rem, 2.5vw + 1rem, 2.5rem); font-weight:700; }
 
+    .back-button {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      color: #000;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 0.375rem;
+      z-index: 10;
+    }
+    .back-button:hover {
+      background: #fff;
+    }
+
     /* outer rounded container */
     .frame {
       border: var(--border);
@@ -85,6 +101,7 @@
   </style>
 </head>
 <body>
+  <a href="../index.html" class="back-button">&#8592; Home</a>
   <h1>cbx Website</h1>
   <h2>Development Slots</h2>
 
