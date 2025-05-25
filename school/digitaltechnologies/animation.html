@@ -37,7 +37,7 @@
   </style>
 </head>
 <body>
-  <a href="/index.html" class="back-button">&#8592; Home</a>
+  <a onclick="ButtonAlerts()" class="back-button">&#8592; Home</a>
   <div id="flash-container"></div>
 <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 <script>
@@ -49,6 +49,19 @@
     player.style.height = "100%";
     container.appendChild(player);
     player.load("3.swf");
+  });
+</script>
+<script>
+  function buttonAlerts() {
+    document.querySelectorAll('.primary-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        alert('you will not leave');
+      });
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    buttonAlerts();
   });
 </script>
 </body>
