@@ -1,0 +1,256 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: linear-gradient(to top, #3d4145 0 32%, #98c6f5 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Car Shadow */
+.car-shadow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 42px;
+  width: 370px;
+  height: 48px;
+  background: radial-gradient(ellipse at 50% 60%, #0007 60%, #0000 100%);
+  z-index: 1;
+  filter: blur(3px);
+  pointer-events: none;
+}
+
+/* Car Body */
+.car {
+  position: relative;
+  margin-bottom: 50px;
+  width: 520px;
+  height: 320px;
+  background: linear-gradient(160deg,#f9e9d0 70%,#e0c9a6 100%);
+  border-radius: 90px 90px 70px 70px / 120px 120px 80px 80px;
+  box-shadow: 0 12px 45px 7px #2228;
+  border: 4px solid #dbccba;
+  z-index: 2;
+}
+
+/* Trunk Outline */
+.trunk-line {
+  position: absolute;
+  left: 43px; right: 43px;
+  top: 130px;
+  height: 0;
+  border-top: 3px solid #d3c2a3;
+  border-radius: 40px 40px 0 0;
+  z-index: 8;
+}
+
+/* Rear Window */
+.window {
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 340px;
+  height: 74px;
+  background: linear-gradient(135deg, #e2f0fa 80%, #b8d7f7 100%);
+  border-radius: 24px 24px 34px 34px/38px 38px 40px 40px;
+  border: 7px solid #bfc7cf;
+  box-shadow: 0 2px 22px 0 #99b5e366 inset, 0 1px 0 #fff8 inset;
+  z-index: 3;
+}
+.window::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  width: 62%;
+  height: 26px;
+  background: linear-gradient(110deg, #fff7 35%, transparent 100%);
+  border-radius: 14px;
+  transform: skewY(-7deg);
+  opacity: 0.47;
+  pointer-events: none;
+}
+
+/* Taillights */
+.taillight {
+  position: absolute;
+  top: 120px;
+  width: 36px;
+  height: 78px;
+  background: linear-gradient(to bottom, #ff4d4d 58%, #a10000 100%);
+  border: 4px solid #6d1a1a;
+  border-radius: 18px 18px 16px 16px/19px 19px 30px 30px;
+  box-shadow: 0 0 22px 6px #ff3030bb;
+  z-index: 6;
+}
+.taillight.left  { left: 48px; }
+.taillight.right { right: 48px; }
+.taillight::after {
+  content: '';
+  display: block;
+  width: 70%;
+  height: 30%;
+  margin: 11px auto 0 auto;
+  background: linear-gradient(90deg, #fff2 40%, #ffaaaa99 100%);
+  border-radius: 10px 10px 18px 18px/12px 12px 13px 13px;
+  opacity: 0.7;
+  filter: blur(2px);
+}
+
+/* Reflectors */
+.reflector {
+  position: absolute;
+  bottom: 75px;
+  width: 38px;
+  height: 14px;
+  background: linear-gradient(90deg, #ffcc59 0%, #ffeeb0 100%);
+  border-radius: 8px 10px 12px 10px / 7px 7px 12px 10px;
+  box-shadow: 0 1px 2px #bba53139, 0 1px 0 #fff7 inset;
+  opacity: 0.7;
+  z-index: 7;
+  border: 1.2px solid #e0d0a2;
+  filter: blur(0.3px);
+}
+.reflector.left { left: 65px; }
+.reflector.right { right: 65px; }
+
+/* Bumper */
+.bumper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 46px;
+  width: 380px;
+  height: 32px;
+  background: linear-gradient(90deg, #d6d6d6 60%, #bcbcbc 100%);
+  border-radius: 20px 20px 20px 20px/13px 13px 20px 20px;
+  box-shadow: 0 2px 8px #4446, 0 1px 0 #fff8 inset;
+  border: 2.5px solid #aaa;
+  z-index: 10;
+}
+
+/* Exhaust */
+.exhaust {
+  position: absolute;
+  right: 46px;
+  bottom: 24px;
+  width: 38px;
+  height: 10px;
+  background: linear-gradient(90deg, #bdbdbd 60%, #838383 100%);
+  border-radius: 6px 16px 12px 10px / 6px 14px 12px 10px;
+  box-shadow: 0 2px 6px #0003;
+  opacity: 0.9;
+  z-index: 4;
+  border: 1.5px solid #959595;
+  transform: rotate(-10deg);
+}
+
+/* Sticker */
+.sticker {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 170px;
+  background: linear-gradient(90deg, #ff1b91 0%, #8338ec 55%, #3a86ff 100%);
+  color: white;
+  padding: 9px 34px;
+  border-radius: 8px;
+  font-size: 1.08rem;
+  text-align: center;
+  box-shadow: 0 3px 12px #0006;
+  border: 2.5px solid #fff;
+  max-width: 305px;
+  min-width: 160px;
+  z-index: 13;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.sticker .emoji {
+  font-size: 1.3em;
+  margin-right: 0.2em;
+  filter: drop-shadow(0 1px 3px #0006);
+}
+
+/* Plate */
+.plate {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 228px;
+  width: 132px;
+  height: 32px;
+  background: linear-gradient(180deg, #f8f8f8 80%, #bdbdbd 100%);
+  border: 2.2px solid #bbb;
+  border-radius: 7px;
+  text-align: center;
+  line-height: 32px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  font-size: 1.09rem;
+  color: #232323;
+  box-shadow: 0 2px 12px #3333, 0 1px 0 #fff;
+  z-index: 15;
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 0 #fff, 0 2px 2px #0002;
+}
+
+/* Wheels */
+.wheel {
+  position: absolute;
+  bottom: -46px;
+  width: 92px;
+  height: 40px;
+  background:
+    radial-gradient(ellipse at 60% 72%, #444 70%, #222 100%),
+    linear-gradient(180deg,#222 87%,#444 100%);
+  border-radius: 50% / 50%;
+  border: 7px solid #232323;
+  box-shadow: 0 14px 14px #000b;
+  z-index: 11;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.wheel.left { left: 62px; }
+.wheel.right { right: 62px; }
+.wheel::before {
+  content: '';
+  display: block;
+  width: 34px;
+  height: 16px;
+  background: radial-gradient(ellipse at 50% 45%, #d2d2d2 70%, #999 100%);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  box-shadow: 0 2px 8px #0004;
+  opacity: 0.93;
+  z-index: 1;
+}
+
+@media (max-width: 700px) {
+  .car { width: 99vw; min-width: 0; height: 170px; }
+  .window { width: 46vw; min-width: 60px; height: 28px; border-width: 3px; top: 10px; }
+  .taillight { width: 17px; height: 32px; top: 46px; left: 9px; }
+  .taillight.right { right: 9px; }
+  .sticker { font-size: 0.69rem; padding: 2px 7px; min-width: 47px; max-width: 88px; top: 70px; }
+  .plate { width: 55px; height: 16px; font-size: 0.43rem; top: 97px; line-height: 16px; }
+  .bumper { width: 120px; height: 11px; bottom: 13px; }
+  .reflector { width: 14px; height: 6px; bottom: 28px; left: 16px; }
+  .reflector.right { right: 16px; }
+  .wheel { width: 31px; height: 11px; bottom: -13px; left: 10px; }
+  .wheel.right { right: 10px; }
+  .wheel::before { width: 9px; height: 4px; bottom: 2px; }
+  .car-shadow { width: 80px; height: 9px; bottom: 9px; }
+}
